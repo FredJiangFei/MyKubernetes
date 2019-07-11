@@ -1,0 +1,33 @@
+apiVersion:  apps/v1
+kind: Deployment
+metadata:
+  name: service-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service_test_pod
+  template:
+    metadata:
+      labels:
+        app: service_test_pod
+    spec:
+      containers:
+      - name: simple-http
+        image: python:2.7
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/bash"]
+        args: ["-c", "echo \"<p>Hello from $(hostname)</p>\" > index.html; sleep 30; python -m SimpleHTTPServer 8080"]
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 35
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 40
+          periodSeconds: 20
