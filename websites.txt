@@ -1,0 +1,10 @@
+https://github.com/udemy-course/Kubernetes-CN
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+https://github.com/kubernetes/minikube
+https://github.com/kubernetes/kubeadm
+https://github.com/kubernetes/kops
+
+Google cloud k8s engine
+
+https://labs.play-with-k8s.com/
+play-with-docker
