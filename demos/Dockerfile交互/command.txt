@@ -1,0 +1,8 @@
+docker run ubuntu:14.04 /bin/echo 'Hello world'
+
+docker run -t -i ubuntu:14.04 /bin/bash
+pwd
+ls
+exit
+
+docker run -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"

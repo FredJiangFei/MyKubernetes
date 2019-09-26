@@ -1,0 +1,2 @@
+docker build -t hellodocker:1.0 .
+docker run --name hellodocker_web -d -p 8088:80 hellodocker:1.0
